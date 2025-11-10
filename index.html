@@ -1,68 +1,70 @@
 <!doctype html>
 <html lang="it">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>[Titolo Talk]</title>
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
-		<!-- Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-XXXXXXXXXX');
-  
-  // Track slide changes
-  Reveal.on('slidechanged', event => {
-    gtag('event', 'slide_view', {
-      'slide_number': event.indexh + 1,
-      'total_slides': Reveal.getTotalSlides()
-    });
-  });
-</script>
-
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section data-background-image="slides/Slide1.png" data-background-size="contain"></section>
-				<section data-background-image="slides/Slide2.png" data-background-size="contain"></section>
-				<section data-background-image="slides/Slide3.png" data-background-size="contain"></section>
-				<!-- Ripeti per tutte le 65 slide -->
-			</div>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Philosophical Journey - LLM Talk</title>
+	<link rel="stylesheet" href="dist/reset.css">
+	<link rel="stylesheet" href="dist/reveal.css">
+	<link rel="stylesheet" href="dist/theme/black.css">
+	
+	<!-- Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		gtag('config', 'G-XXXXXXXXXX');
+	</script>
+</head>
+<body>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background-image="slides/Slide1.png" data-background-size="contain"></section>
+			<section data-background-image="slides/Slide2.png" data-background-size="contain"></section>
+			<section data-background-image="slides/Slide3.png" data-background-size="contain"></section>
+			<!-- Ripeti per tutte le 65 slide -->
+			<section data-background-image="slides/Slide4.png" data-background-size="contain"></section>
+			<section data-background-image="slides/Slide5.png" data-background-size="contain"></section>
+			<!-- ... fino a Slide65.png -->
 		</div>
+	</div>
 
-		<script src="dist/reveal.js"></script>
-		<script>
-			Reveal.initialize({
-	// Navigazione
-	controls: true,           // Frecce navigazione
-	progress: true,           // Barra progresso
-	slideNumber: 'c/t',       // "5 / 65"
-	hash: true,               // URL aggiornato per ogni slide
+	<!-- Carica Reveal.js -->
+	<script src="dist/reveal.js"></script>
 	
-	// Transizioni
-	transition: 'slide',      // slide | fade | convex | concave | zoom
-	backgroundTransition: 'fade',
-	
-	// Comportamento
-	center: true,             // Centra contenuto verticalmente
-	loop: false,              // Non loopare alla fine
-	autoSlide: 0,             // 0 = mai, 5000 = ogni 5sec
-	
-	// Mobile
-	touch: true,              // Swipe su mobile
-	
-	// Keyboard shortcuts
-	keyboard: true,
-	
-	// Plugins (aggiungi se necessario)
-	plugins: [ RevealMarkdown, RevealNotes ]
-});
-
-		</script>
-	</body>
+	<!-- Inizializza -->
+	<script>
+		Reveal.initialize({
+			// Navigazione
+			controls: true,
+			progress: true,
+			slideNumber: 'c/t',
+			hash: true,
+			
+			// Transizioni
+			transition: 'slide',
+			backgroundTransition: 'fade',
+			
+			// Comportamento
+			center: true,
+			loop: false,
+			autoSlide: 0,
+			
+			// Mobile
+			touch: true,
+			keyboard: true
+			
+			// NOTA: plugins rimosso perché non servono per le immagini
+		}).then(() => {
+			// Track slide changes DOPO inizializzazione
+			Reveal.on('slidechanged', event => {
+				gtag('event', 'slide_view', {
+					'slide_number': event.indexh + 1,
+					'total_slides': Reveal.getTotalSlides()
+				});
+			});
+		});
+	</script>
+</body>
 </html>
