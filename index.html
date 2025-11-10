@@ -1,39 +1,33 @@
 <!doctype html>
-<html lang="en">
+<html lang="it">
 	<head>
 		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-		<title>reveal.js</title>
-
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>[Titolo Talk]</title>
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
 		<link rel="stylesheet" href="dist/theme/black.css">
-
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
 	</head>
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section data-background-image="slides/Slide1.png" data-background-size="contain"></section>
+				<section data-background-image="slides/Slide2.png" data-background-size="contain"></section>
+				<section data-background-image="slides/Slide3.png" data-background-size="contain"></section>
+				<!-- Ripeti per tutte le 65 slide -->
 			</div>
 		</div>
 
 		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
 		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
 			Reveal.initialize({
 				hash: true,
-
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
+				transition: 'slide',
+				backgroundTransition: 'fade',
+				controls: true,
+				progress: true,
+				center: true,
+				slideNumber: 'c/t'
 			});
 		</script>
 	</body>
