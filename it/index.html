@@ -140,6 +140,18 @@
 					'total_slides': Reveal.getTotalSlides()
 				});
 			});
+
+			// Custom 'Esc' key behavior
+			let isOverview = false;
+			Reveal.on('overviewshown', () => { isOverview = true; });
+			Reveal.on('overviewhidden', () => { isOverview = false; });
+
+			document.addEventListener('keydown', event => {
+				if (event.keyCode === 27 && isOverview) {
+					event.stopImmediatePropagation();
+					window.location.href = '../index.html';
+				}
+			}, true);
 		});
 	</script>
 	<div id="language-switcher"><a href="../index.html">Back</a></div>
