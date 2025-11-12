@@ -25,7 +25,7 @@
 		}
 		.language-switcher a {
 			color: #eee;
-			padding: 10px 15px;
+			padding: 0 5px;
 			text-decoration: none;
 			font-size: 24px;
 		}
@@ -156,11 +156,19 @@
 					window.location.href = '../index.html';
 				}
 			}, true);
+
+			// Language switcher logic
+			document.getElementById('lang-en').addEventListener('click', function(event) {
+				event.preventDefault();
+				const indices = Reveal.getIndices();
+				window.location.href = `../en/index.html#/${indices.h}`;
+			});
 		});
 	</script>
 	<div class="language-switcher">
-		<a href="../en/index.html">🇬🇧</a>
-		<a href="../it/index.html">🇮🇹</a>
+		<a href="../index.html">🏠</a>
+		<a href="#" id="lang-en">🇬🇧</a>
+		<a href="#">🇮🇹</a>
 	</div>
 </body>
 </html>
